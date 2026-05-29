@@ -1,0 +1,33 @@
+# Netlify configuration for Red Bull Animated Website
+# This is a static site — no build step needed
+
+[build]
+  # Serve directly from root
+  publish = "."
+
+# Caching headers for performance
+[[headers]]
+  for = "/ezgif-35b2951b31e39886-jpg/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+[[headers]]
+  for = "*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+# Redirect all 404s to index
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

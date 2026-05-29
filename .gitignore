@@ -1,0 +1,21 @@
+# Dependencies
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+
+# Unused duplicate images
+gallery-1.png
+gallery-2.png
+gallery-3.png
+gallery-4.png
+flavor-redbull.png
+gallery-cooler.png
+gallery-lineup.png
+gallery-redbull-2.png
