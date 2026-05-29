@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Red Bull Blue Edition - Experience the energy with a stunning scroll-driven animation showcase">
+    <title>Red Bull Blue Edition | Scroll Animation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=Oswald:wght@700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#1A469D",
+                        "background-light": "#F8FAFC",
+                        "background-dark": "#0B1120",
+                        azure: "#4E86E4",
+                        silver: "#E2E8F0",
+                        kinetic: "#FF0032"
+                    },
+                    fontFamily: {
+                        display: ["Oswald", "sans-serif"],
+                        sans: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                    },
+                },
+            },
+        };
+    </script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .hero-text-shadow {
+            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .gradient-overlay {
+            background: linear-gradient(0deg, rgba(11, 17, 32, 0.6) 0%, rgba(11, 17, 32, 0) 100%);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Loading Screen -->
+    <div id="loader">
+        <div class="loader-content">
+            <div class="loader-logo">RED BULL</div>
+            <div class="loader-subtitle">BLUE EDITION</div>
+            <div class="loader-bar-track">
+                <div class="loader-bar-fill" id="loaderBar"></div>
+            </div>
+            <div class="loader-percent" id="loaderPercent">0%</div>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav id="navbar">
+        <div class="nav-inner">
+            <div class="nav-logo">
+                <a href="#animation-section">
+                    <img src="./redbull-logo.png" alt="Red Bull Logo" class="nav-logo-img">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#flavor">Flavor</a></li>
+                <li><a href="#benefits">Benefits</a></li>
+                <li><a href="#lifestyle">Gallery</a></li>
+                <li><a href="#locator" class="nav-cta">Buy Now</a></li>
+            </ul>
+            <button class="nav-mobile-btn" id="navMobileBtn">
+                <span class="material-icons">menu</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Scroll Animation Section -->
+    <section id="animation-section">
+        <div class="animation-sticky">
+            <canvas id="scrollCanvas"></canvas>
+            <!-- Hero heading that fades out at 30% scroll -->
+            <div class="hero-heading" id="heroHeading">
+                <h1 class="hero-heading-title" style="color: rgb(213, 13, 13);">RED BULL</h1>
+                <p class="hero-heading-sub">GIVES YOU WINGS</p>
+            </div>
+            <!-- Overlay text that fades in/out at key moments -->
+            <div class="canvas-overlay" id="canvasOverlay">
+                <div class="overlay-text overlay-text-1" id="overlayText1">
+                    <span class="overlay-small"></span>
+                    <span class="overlay-big"></span>
+                </div>
+                <div class="overlay-text overlay-text-2" id="overlayText2">
+                    <span class="overlay-small"></span>
+                    <span class="overlay-big"></span>
+                </div>
+                <div class="overlay-text overlay-text-3" id="overlayText3">
+                    <span class="overlay-small"></span>
+                    <span class="overlay-big"></span>
+                </div>
+            </div>
+            <!-- Progress bar -->
+            <div class="scroll-progress">
+                <div class="scroll-progress-fill" id="scrollProgressFill"></div>
+            </div>
+            <div class="frame-counter" id="frameCounter">001 / 240</div>
+        </div>
+    </section>
+
+    <!-- Flavor Section -->
+    <section class="py-24 bg-white dark:bg-slate-900 overflow-hidden" id="flavor">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="relative group">
+                    <div
+                        class="absolute -inset-4 bg-primary/20 rounded-2xl blur-2xl group-hover:bg-primary/30 transition-all duration-500">
+                    </div>
+                    <img alt="Icy blue splash and refreshment"
+                        class="relative rounded-2xl shadow-2xl object-cover w-full h-[500px]"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfBqV1yDqGIBF46rHgnJr3Dh3hdJaMj5dYsNCSC0rS8mc83bNMT10y--m6OnizqiHVgg3kIZdObWGz27Ut8BXSdudhJuY_IAtRvnnXMHBAS7r5lJQ5jO81jqXMAbkAjlFICSDT-eqUL5fpTq0tfzNZhvYFFfbfDmOmQb-xDnmNoPsbbLH34p74WXFc2Ft6DbZcugEeuFsC_YOSSZoc9noNliuHH3-pZinYEMm7K3HJXJNAzrSPCOwoEFiZGlgq0elNF14Ih2WjLDY" />
+                </div>
+                <div class="space-y-8">
+                    <h2
+                        class="font-display text-4xl md:text-6xl uppercase tracking-tight text-primary dark:text-blue-400">
+                        The Soul of Blueberry
+                    </h2>
+                    <div class="w-20 h-2 bg-kinetic"></div>
+                    <p class="text-lg md:text-xl text-slate-600 dark:text-slate-400 leading-relaxed">
+                        Experience a refreshing explosion of taste. The Blue Edition combines the functional benefits of
+                        an energy drink with the sophisticated, crisp notes of mountain-harvested blueberries.
+                    </p>
+                    <p class="text-lg md:text-xl text-slate-600 dark:text-slate-400 leading-relaxed">
+                        Light, carbonated, and served ice-cold, it delivers a sharp sensory journey that revitalizes the
+                        mind and body.
+                    </p>
+                    <div class="flex gap-4 items-center pt-4">
+                        <span
+                            class="px-4 py-2 rounded-lg bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 font-bold text-sm uppercase">100%
+                            Recyclable</span>
+                        <span
+                            class="px-4 py-2 rounded-lg bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 font-bold text-sm uppercase">Real
+                            Fruit Aroma</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-24 bg-slate-50 dark:bg-slate-950" id="benefits">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-4xl md:text-5xl uppercase tracking-tighter mb-4">Vitality Optimized</h2>
+                <p class="text-slate-500 dark:text-slate-400 max-w-2xl mx-auto">Engineered for those who never stop. The
+                    Azure Kinetic formula keeps you at peak performance when it matters most.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div
+                    class="bg-white dark:bg-slate-900 p-10 rounded-3xl border border-slate-200 dark:border-slate-800 text-center hover:border-primary dark:hover:border-primary transition-all group">
+                    <div
+                        class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                        <span class="material-icons text-primary text-4xl">psychology</span>
+                    </div>
+                    <h3 class="font-display text-2xl uppercase mb-4 tracking-wide">Focus</h3>
+                    <p class="text-slate-600 dark:text-slate-400">Sharpen your mental clarity. B-group vitamins
+                        contribute to normal energy-yielding metabolism and mental performance.</p>
+                </div>
+                <div
+                    class="bg-white dark:bg-slate-900 p-10 rounded-3xl border border-slate-200 dark:border-slate-800 text-center hover:border-primary dark:hover:border-primary transition-all group">
+                    <div
+                        class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                        <span class="material-icons text-primary text-4xl">bolt</span>
+                    </div>
+                    <h3 class="font-display text-2xl uppercase mb-4 tracking-wide">Energy</h3>
+                    <p class="text-slate-600 dark:text-slate-400">High-grade caffeine derived from natural sources helps
+                        to increase alertness and improve concentration.</p>
+                </div>
+                <div
+                    class="bg-white dark:bg-slate-900 p-10 rounded-3xl border border-slate-200 dark:border-slate-800 text-center hover:border-primary dark:hover:border-primary transition-all group">
+                    <div
+                        class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                        <span class="material-icons text-primary text-4xl">speed</span>
+                    </div>
+                    <h3 class="font-display text-2xl uppercase mb-4 tracking-wide">Performance</h3>
+                    <p class="text-slate-600 dark:text-slate-400">Optimized blend including Taurine, an amino acid
+                        occurring naturally in the body, involved in vital processes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="py-24 bg-white dark:bg-slate-900" id="lifestyle">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="font-display text-4xl md:text-5xl uppercase tracking-tighter mb-12 text-center">Charged by Blue
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="relative h-96 rounded-2xl overflow-hidden group cursor-pointer">
+                    <img alt="Skateboarding performance"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 filter saturate-150 brightness-75 group-hover:brightness-100"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-qmjmDyiu1RV2r-aI2zFFDq5aY4lFAiqGhY6k6CDChKfqCmJ6cRnBLzCL4-YxgegnmMkw43QCmEWmwBbCiRsgFN7mYIFkwppR-7O2FVEhjuejN7NelhMUI5nfQCCIhRr3VRgqHGIQjCpr74ZNxuSZW_LjwRHas3YpzRUr5oy97DIVQkHvsdmF75MBY0mE35Hnu4RFPaxexcqsIo0F2PzQZ4bStPbMNpRuWdOPR_qUpoR_lTofMgZqZaFbf2JJF-r5HESSwimAf_g" />
+                    <div class="absolute bottom-6 left-6 text-white">
+                        <p class="font-display text-xl uppercase italic">Streets</p>
+                    </div>
+                </div>
+                <div class="relative h-96 rounded-2xl overflow-hidden group cursor-pointer lg:mt-12">
+                    <img alt="Gaming session"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 filter saturate-150 brightness-75 group-hover:brightness-100"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwvjZdS_5pnthlMw-9iDmxvNLxHEevSzo5lcJYtUnlXMBbbfLUGtzH0vI1keKnrb-q43QKJLaX6NDM2WB4_-qVTl2gucB0EvuKKRywd39AbCAWbZcG5nksosN7pF0bPMY06BK1eCHw2k4sACjJlUoo9Ma_twa0En2JqnrYnSbz5EaKftX69c9huFUasTc5pcXX4XyRUWRVP-PAxag-N8cDkeP8cfvSbC4lbpctCOYBz3y7iFKRvC8zArkONYxJY9HlqzCG5o6gp1E" />
+                    <div class="absolute bottom-6 left-6 text-white">
+                        <p class="font-display text-xl uppercase italic">Gaming</p>
+                    </div>
+                </div>
+                <div class="relative h-96 rounded-2xl overflow-hidden group cursor-pointer">
+                    <img alt="Music festival energy"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 filter saturate-150 brightness-75 group-hover:brightness-100"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZeqW44WjOorpDJCp16rjWRlK5byuOuyI5XTEka3LYmH0jL9hfmiZb5wrwOjDLMz3xgT0hhGdykZrLHzyDMKaeltjHa6hfGLVrEd7MI21ZHmi3Cm3AA8flwzVE_DXqp8fSijSDNxyldLAkHEm_9BmqeoTBCu5VDW_yeBRaGSDE0xcVUjwtbxE2P07FSyeUW_R3i6RnhFGwyesLr2KnBvWZmvxlaEaDEaPSoa_QbW_bPOeVemQyC25vAZn1l4UYFBtnbfilm5MK1vY" />
+                    <div class="absolute bottom-6 left-6 text-white">
+                        <p class="font-display text-xl uppercase italic">Festival</p>
+                    </div>
+                </div>
+                <div class="relative h-96 rounded-2xl overflow-hidden group cursor-pointer lg:mt-12">
+                    <img alt="Late night drive"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 filter saturate-150 brightness-75 group-hover:brightness-100"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtf7fD7oJcyOKmDlh3Hc9XcDgeQUgHH7XTXHW73klVikBdypz_DK-gR30imSMZhR3rLLbhODURDTpCVnsK1L7VnlHBJfS9IDD5BeiLTvnuG89IbaDzdKF4q2YzCEM5hgBgPC-4LRqN5PYC2CCkUj8sisv8ZfzD1f1vCnYVPdMx79OObDy3Obv9SMjlcrJA0vcFCU03uODcwD8MSGauZ_LwAqV5BMHNhoKrhUVIaT3L9mhznIVOq0ZWKXAqKfwdMKwYcclfitHUmhQ" />
+                    <div class="absolute bottom-6 left-6 text-white">
+                        <p class="font-display text-xl uppercase italic">Night</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Store Locator / CTA Section -->
+    <section class="relative py-24 overflow-hidden" id="locator">
+        <div class="absolute inset-0 bg-primary z-0">
+            <div
+                class="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent">
+            </div>
+        </div>
+        <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+            <h2
+                class="font-display text-5xl md:text-7xl text-white uppercase tracking-tighter mb-8 leading-tight italic">
+                Ready to Feel <br />the Surge?
+            </h2>
+            <p class="text-blue-100 text-xl mb-12 font-medium">Find Red Bull Blue Edition at your nearest retailer.</p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center items-stretch max-w-lg mx-auto">
+                <div class="flex-grow bg-white rounded-full px-6 flex items-center">
+                    <span class="material-icons text-slate-400 mr-2">location_on</span>
+                    <input
+                        class="w-full border-none focus:ring-0 text-slate-900 bg-transparent py-4 font-semibold uppercase"
+                        placeholder="Enter Zip Code" type="text" />
+                </div>
+                <button
+                    class="bg-white text-primary px-10 py-4 rounded-full font-black uppercase tracking-widest hover:bg-silver transition-all shadow-2xl">
+                    Find Store
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-400 py-16 border-t border-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-2">
+                    <div class="flex items-center gap-2 mb-6">
+                        <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
+                            <span class="material-icons text-white text-xs">bolt</span>
+                        </div>
+                        <span class="font-display text-xl uppercase font-bold text-white tracking-tighter">AZURE
+                            KINETIC</span>
+                    </div>
+                    <p class="max-w-sm text-sm">Vitalizes body and mind. The Red Bull Blue Edition contains the same
+                        high quality ingredients as Red Bull Energy Drink and has a fruity blueberry taste.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold uppercase text-xs tracking-widest mb-6">Products</h4>
+                    <ul class="space-y-4 text-sm">
+                        <li><a class="hover:text-primary transition-colors" href="#">Original Energy</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Sugar Free</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">The Editions</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold uppercase text-xs tracking-widest mb-6">Company</h4>
+                    <ul class="space-y-4 text-sm">
+                        <li><a class="hover:text-primary transition-colors" href="#">Our History</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Athletes</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Sustainability</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="pt-8 border-t border-slate-900 flex flex-col md:flex-row justify-between items-center gap-4 text-xs uppercase tracking-widest">
+                <div class="flex gap-8">
+                    <a class="hover:text-white transition-colors" href="#">Privacy Policy</a>
+                    <a class="hover:text-white transition-colors" href="#">Terms of Use</a>
+                    <a class="hover:text-white transition-colors" href="#">Cookies</a>
+                </div>
+                <div class="flex gap-4">
+                    <a class="w-8 h-8 rounded-full bg-slate-900 flex items-center justify-center hover:bg-primary transition-colors"
+                        href="#">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                            <path
+                                d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z">
+                            </path>
+                        </svg>
+                    </a>
+                    <a class="w-8 h-8 rounded-full bg-slate-900 flex items-center justify-center hover:bg-primary transition-colors"
+                        href="#">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z">
+                            </path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <p class="text-center mt-12 text-slate-600 text-[10px] tracking-[0.2em] uppercase">© 2024 AZURE KINETIC -
+                RED BULL BLUE EDITION PROMOTIONAL PAGE</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
