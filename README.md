@@ -2,7 +2,7 @@
 
 A visually stunning, scroll-driven animated landing page for the **Red Bull Blue Edition**. As you scroll, a cinematic 240-frame animation plays on an HTML5 Canvas, creating an immersive product showcase experience.
 
-> 🔗 **Live Demo:** [View on Netlify](https://your-netlify-url.netlify.app) *(update with your link)*
+> 🔗 **Live Demo:** [View on Netlify](https://red-bull-animated-website.netlify.app/)
 
 ---
 
@@ -100,9 +100,6 @@ No build tools required — this is a **static website**. Just a modern web brow
      npx serve .
      ```
 
-4. **Visit** `http://localhost:8000` in your browser
-
----
 
 ## 🎯 How It Works
 
